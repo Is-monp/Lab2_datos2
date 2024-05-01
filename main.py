@@ -231,13 +231,12 @@ def main():
 
     source_airport = input("Ingrese el código del aeropuerto de origen: ").strip().upper()
     destination_airport = input("Ingrese el código del aeropuerto de destino: ").strip().upper()
-    camino_minimo = flight_graph.dijkstra(source_airport, destination_airport)
-
-    if camino_minimo:
-        print("Camino mínimo:")
-        print(" -> ".join(camino_minimo))
-    else:
-        print("No se encontró un camino entre los aeropuertos especificados.")
+    with open("caminomin.txt", "w") as archivo:
+        camino_minimo = flight_graph.dijkstra(source_airport, destination_airport)
+        if camino_minimo:
+            archivo.write(" -> ".join(camino_minimo))
+        else:
+            archivo.write("No se encontró un camino entre los aeropuertos especificados.")
 
     graph_nodes({'Source Airport Code': ['CAN']}, df, True)
 
@@ -258,17 +257,18 @@ def main():
     src_distances_df = src_distances_df.sort_values(by='Distancia camino minimo', ascending=False)
     src_distances_df = src_distances_df.head(10)
     src_distances_df.reset_index(inplace=True, drop=True)
+    with open("top10.txt", "w") as archivo:
+        for i in range(len(src_distances_df)):
+            archivo.write(f"Top {(i + 1)}\n")
+            archivo.write(f"  - Codigo: {src_distances_df.at[i, 'Airport Code']}\n")
+            archivo.write(f"  - Nombre: {src_distances_df.at[i, 'Airport Name']}\n")
+            archivo.write(f"  - Ciudad: {src_distances_df.at[i, 'Airport City']}\n")
+            archivo.write(f"  - Pais: {src_distances_df.at[i, 'Airport Country']}\n")
+            archivo.write(f"  - Latitud: {src_distances_df.at[i, 'Airport Latitude']}\n")
+            archivo.write(f"  - Longitud: {src_distances_df.at[i, 'Airport Longitude']}\n")
+            numero_redondeado = round(src_distances_df.at[i, 'Distancia camino minimo'], ndigits=2)
+            archivo.write(f"  - Distancia camino minimo: {numero_redondeado}\n")
 
-    for i in range(len(src_distances_df)):
-        print(f"Top {(i + 1)}")
-        print(f"  - Codigo: {src_distances_df.at[i, 'Airport Code']}")
-        print(f"  - Nombre: {src_distances_df.at[i, 'Airport Name']}")
-        print(f"  - Ciudad: {src_distances_df.at[i, 'Airport City']}")
-        print(f"  - Pais: {src_distances_df.at[i, 'Airport Country']}")
-        print(f"  - Latitud: {src_distances_df.at[i, 'Airport Latitude']}")
-        print(f"  - Longitud: {src_distances_df.at[i, 'Airport Longitude']}")
-        numero_redondeado = round(src_distances_df.at[i, 'Distancia camino minimo'], ndigits=2)
-        print(f"  - Distancia camino minimo: {numero_redondeado}")
 
 if __name__ == "__main__":
     main()

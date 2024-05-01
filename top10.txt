@@ -1,0 +1,80 @@
+Top 1
+  - Codigo: GMR
+  - Nombre: Totegegie Airport
+  - Ciudad: Totegegie
+  - Pais: French Polynesia
+  - Latitud: -23.07990074
+  - Longitud: -134.8899994
+  - Distancia camino minimo: 20481.49
+Top 2
+  - Codigo: UAH
+  - Nombre: Ua Huka Airport
+  - Ciudad: Ua Huka
+  - Pais: French Polynesia
+  - Latitud: -8.93611
+  - Longitud: -139.552002
+  - Distancia camino minimo: 20311.65
+Top 3
+  - Codigo: UAP
+  - Nombre: Ua Pou Airport
+  - Ciudad: Ua Pou
+  - Pais: French Polynesia
+  - Latitud: -9.35167
+  - Longitud: -140.078003
+  - Distancia camino minimo: 20299.67
+Top 4
+  - Codigo: AUQ
+  - Nombre: Hiva Oa-Atuona Airport
+  - Ciudad: Hiva-oa
+  - Pais: French Polynesia
+  - Latitud: -9.768790245
+  - Longitud: -139.0110016
+  - Distancia camino minimo: 20264.05
+Top 5
+  - Codigo: NHV
+  - Nombre: Nuku Hiva Airport
+  - Ciudad: Nuku Hiva
+  - Pais: French Polynesia
+  - Latitud: -8.795599937
+  - Longitud: -140.2290039
+  - Distancia camino minimo: 20235.65
+Top 6
+  - Codigo: HOI
+  - Nombre: Hao Airport
+  - Ciudad: Hao Island
+  - Pais: French Polynesia
+  - Latitud: -18.07480049
+  - Longitud: -140.9459991
+  - Distancia camino minimo: 19748.27
+Top 7
+  - Codigo: PPG
+  - Nombre: Pago Pago International Airport
+  - Ciudad: Pago Pago
+  - Pais: American Samoa
+  - Latitud: -14.33100033
+  - Longitud: -170.7100067
+  - Distancia camino minimo: 19584.66
+Top 8
+  - Codigo: RVV
+  - Nombre: Raivavae Airport
+  - Ciudad: Raivavae
+  - Pais: French Polynesia
+  - Latitud: -23.8852005
+  - Longitud: -147.6620026
+  - Distancia camino minimo: 19562.12
+Top 9
+  - Codigo: RMT
+  - Nombre: Rimatara Airport
+  - Ciudad: Rimatara
+  - Pais: French Polynesia
+  - Latitud: -22.63725
+  - Longitud: -152.8059
+  - Distancia camino minimo: 19486.16
+Top 10
+  - Codigo: TUB
+  - Nombre: Tubuai Airport
+  - Ciudad: Tubuai
+  - Pais: French Polynesia
+  - Latitud: -23.36540031
+  - Longitud: -149.5240021
+  - Distancia camino minimo: 19475.94

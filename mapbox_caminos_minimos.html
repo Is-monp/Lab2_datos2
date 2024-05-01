@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Display a map on a webpage</title>
+<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+<link href="https://api.mapbox.com/mapbox-gl-js/v3.3.0/mapbox-gl.css" rel="stylesheet">
+<script src="https://api.mapbox.com/mapbox-gl-js/v3.3.0/mapbox-gl.js"></script>
+<style>
+
+
+body {
+    height: 98vh;
+    padding: 10px;
+    margin: 0;
+}
+
+.tab {
+  display: block;
+  padding: 10px;
+  color: #fff; /* Color del texto */
+  text-decoration: none;
+  text-align: center;
+}
+
+.tab:hover {
+  background-color: #555; /* Color de fondo al pasar el ratón */
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+
+
+}
+
+.leftelement {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+}
+.rightelement {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+}
+.cammin {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 20%;
+
+}
+
+.cammin10 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 80%;
+
+}
+
+.archivo10 {
+    overflow-y: scroll;
+    width: 95%;
+    padding-left: 25px;
+    height: 50%;
+}
+</style>
+</head>
+<body>
+    <div class="container" style="background-color: red;">
+        <div class="leftelement" style="background-color: rgb(213, 14, 67);">
+
+            <div class="cammin" style="background-color: rgb(22, 28, 195);">
+                <h3>Camino Mímimo:</h3>
+                <iframe src="./caminomin.txt" title="description"></iframe>
+                <!-- loreimpsdwefk> SDD -> SDC -->
+            </div>
+            <div class="cammin10" style="background-color: rgb(235, 3, 3);">
+                <h3>Camino Mímimo de los 10:</h3>
+                <div class="archivo10">
+                    Top 6<br>
+                    - Codigo: specxxxxxxxxx<br>
+                    - Nombre: Paraburdoo Airport<br>
+                    - Ciudad: Paraburdoo<br>
+                    - Pais: Australia<br>
+                    - Latitud: -23.17110062<br>
+                    - Longitud: 117.7450027<br>
+                    - Distancia camino minimo: 19942.22<br>
+                  Top 7
+                  Top 6<br>
+                  - Codigo: PBO<br>
+                  - Nombre: Paraburdoo Airport<br>
+                  - Ciudad: Paraburdoo<br>
+                  - Pais: Australia<br>
+                  - Latitud: -23.17110062<br>
+                  - Longitud: 117.7450027<br>
+                  - Distancia camino minimo: 19942.22<br>
+                Top 7
+                Top 6<br>
+                - Codigo: PBO<br>
+                - Nombre: Paraburdoo Airport<br>
+                - Ciudad: Paraburdoo<br>
+                - Pais: Australia<br>
+                - Latitud: -23.17110062<br>
+                - Longitud: 117.7450027<br>
+                - Distancia camino minimo: 19942.22<br>
+              Top 7
+
+              Top 6<br>
+              - Codigo: PBO<br>
+              - Nombre: Paraburdoo Airport<br>
+              - Ciudad: Paraburdoo<br>
+              - Pais: Australia<br>
+              - Latitud: -23.17110062<br>
+              - Longitud: 117.7450027<br>
+              - Distancia camino minimo: 19942.22<br>
+            Top 7
+            Top 6<br>
+            - Codigo: PBO<br>
+            - Nombre: Paraburdoo Airport<br>
+            - Ciudad: Paraburdoo<br>
+            - Pais: Australia<br>
+            - Latitud: -23.17110062<br>
+            - Longitud: 117.7450027<br>
+            - Distancia camino minimo: 19942.22<br>
+          Top 7
+          Top 6<br>
+          - Codigo: PBO<br>
+          - Nombre: Paraburdoo Airport<br>
+          - Ciudad: Paraburdoo<br>
+          - Pais: Australia<br>
+          - Latitud: -23.17110062<br>
+          - Longitud: 117.7450027<br>
+          - Distancia camino minimo: 19942.22<br>
+        Top 7
+        Top 6<br>
+        - Codigo: PBO<br>
+        - Nombre: Paraburdoo Airport<br>
+        - Ciudad: Paraburdoo<br>
+        - Pais: Australia<br>
+        - Latitud: -23.17110062<br>
+        - Longitud: 117.7450027<br>
+        - Distancia camino minimo: 19942.22<br>
+      Top 7
+      Top 6<br>
+      - Codigo: PBO<br>
+      - Nombre: Paraburdoo Airport<br>
+      - Ciudad: Paraburdoo<br>
+      - Pais: Australia<br>
+      - Latitud: -23.17110062<br>
+      - Longitud: 117.7450027<br>
+      - Distancia camino minimo: 19942.22<br>
+    Top 7
+    Top 6<br>
+    - Codigo: PBO<br>
+    - Nombre: Paraburdoo Airport<br>
+    - Ciudad: Paraburdoo<br>
+    - Pais: Australia<br>
+    - Latitud: -23.17110062<br>
+    - Longitud: 117.7450027<br>
+    - Distancia camino minimo: 19942.22<br>
+  Top 7
+                </div>
+
+            </div>
+        </div>
+        <div class="rightelement" style="background-color: rgb(0, 255, 213);">
+            <img src='https://via.placeholder.com/800x400'> </img>
+        </div>
+        
+    </div>
+
+
+
+<!-- <iframe src="./mapa.html" title="description" style="height:1000px;width: 1000px;"></iframe> -->
+
+
+</body>
+</html>
