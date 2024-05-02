@@ -1,26 +1,36 @@
 <!DOCTYPE html>
 <html>
 <head>
+    
 <meta charset="utf-8">
 <title>Display a map on a webpage</title>
 <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
 <link href="https://api.mapbox.com/mapbox-gl-js/v3.3.0/mapbox-gl.css" rel="stylesheet">
 <script src="https://api.mapbox.com/mapbox-gl-js/v3.3.0/mapbox-gl.js"></script>
 <style>
-
+    .custom-iframe {
+        font-family: Arial, sans-serif;
+        color: #d60000;
+        background-color: #ee1616;
+    }
 
 body {
-    height: 98vh;
     padding: 10px;
     margin: 0;
 }
+header{
+    background-color: white;
+    padding: 0px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    height: 60px;
 
+}
 .tab {
-  display: block;
-  padding: 10px;
-  color: #fff; /* Color del texto */
-  text-decoration: none;
-  text-align: center;
+    display: block;
+    padding: 10px;
+    color: #fff; /* Color del texto */
+    text-decoration: none;
+    text-align: center;
 }
 
 .tab:hover {
@@ -29,9 +39,20 @@ body {
 
 .container {
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 1fr 1fr; /* Dos columnas de igual tamaño */
+    height: 88vh;
+}
 
+.Container {
+    margin: 0; /* Centra el contenedor horizontalmente */
+    display: flex;
+    justify-content: center; /* Centra los elementos horizontalmente */
+    align-items: center; 
+}
 
+.logo img {
+    width: 370px; /* Modifica el ancho máximo del logo */
+    height: auto; /* Altura automática según el ancho */
 }
 
 .leftelement {
@@ -46,15 +67,18 @@ body {
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    border-radius: 14px;
 
 }
 .cammin {
     display: flex;
     flex-direction: column;
+    display: inline-block;
+    border-radius: 14px;
     justify-content: space-around;
     align-items: center;
     width: 100%;
-    height: 20%;
+    height: 25%;
 
 }
 
@@ -63,8 +87,10 @@ body {
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    display: inline-block;
+    border-radius: 14px;
     width: 100%;
-    height: 80%;
+    height: 74%;
 
 }
 
@@ -72,110 +98,75 @@ body {
     overflow-y: scroll;
     width: 95%;
     padding-left: 25px;
-    height: 50%;
+    height: 370px;
 }
+
+.cammin h3 {
+    margin: 30px;
+    padding: 0;
+    font-size:large;
+    color: white;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.cammin div {
+    margin: 30px;
+    padding: 0;
+    color: rgb(2, 2, 2);
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: bold;
+    
+}
+.cammin10 h3 {
+    margin: 30px;
+    padding: 0;
+    font-size:large;
+    color: white;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.cammin10 div {
+    margin: 30px;
+    padding: 0;
+    color: rgb(2, 2, 2);
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+    
+}
+.mapa {
+    width: 100%;
+    height: 100%;
+    border-radius: 14px;
+}
+
 </style>
+
 </head>
+<header>
+    <div class="Container">
+        <div class="logo">
+            <img src="LOGOU.png" alt="Logo">
+        </div>
+    </div>
+</header>
+    
 <body>
-    <div class="container" style="background-color: red;">
-        <div class="leftelement" style="background-color: rgb(213, 14, 67);">
+    <div class="container" style="background-color: rgb(255, 255, 255);">
+        <div class="leftelement" style="background-color: rgb(255, 255, 255);">
 
-            <div class="cammin" style="background-color: rgb(22, 28, 195);">
-                <h3>Camino Mímimo:</h3>
-                <iframe src="./caminomin.txt" title="description"></iframe>
-                <!-- loreimpsdwefk> SDD -> SDC -->
+            <div class="cammin" style="background-color: rgb(85, 188, 225);">
+                <h3>The minimum path found between the two vertices appears to be the following:</h3>
+                <div id="textoContainer"></div>
             </div>
-            <div class="cammin10" style="background-color: rgb(235, 3, 3);">
-                <h3>Camino Mímimo de los 10:</h3>
-                <div class="archivo10">
-                    Top 6<br>
-                    - Codigo: specxxxxxxxxx<br>
-                    - Nombre: Paraburdoo Airport<br>
-                    - Ciudad: Paraburdoo<br>
-                    - Pais: Australia<br>
-                    - Latitud: -23.17110062<br>
-                    - Longitud: 117.7450027<br>
-                    - Distancia camino minimo: 19942.22<br>
-                  Top 7
-                  Top 6<br>
-                  - Codigo: PBO<br>
-                  - Nombre: Paraburdoo Airport<br>
-                  - Ciudad: Paraburdoo<br>
-                  - Pais: Australia<br>
-                  - Latitud: -23.17110062<br>
-                  - Longitud: 117.7450027<br>
-                  - Distancia camino minimo: 19942.22<br>
-                Top 7
-                Top 6<br>
-                - Codigo: PBO<br>
-                - Nombre: Paraburdoo Airport<br>
-                - Ciudad: Paraburdoo<br>
-                - Pais: Australia<br>
-                - Latitud: -23.17110062<br>
-                - Longitud: 117.7450027<br>
-                - Distancia camino minimo: 19942.22<br>
-              Top 7
-
-              Top 6<br>
-              - Codigo: PBO<br>
-              - Nombre: Paraburdoo Airport<br>
-              - Ciudad: Paraburdoo<br>
-              - Pais: Australia<br>
-              - Latitud: -23.17110062<br>
-              - Longitud: 117.7450027<br>
-              - Distancia camino minimo: 19942.22<br>
-            Top 7
-            Top 6<br>
-            - Codigo: PBO<br>
-            - Nombre: Paraburdoo Airport<br>
-            - Ciudad: Paraburdoo<br>
-            - Pais: Australia<br>
-            - Latitud: -23.17110062<br>
-            - Longitud: 117.7450027<br>
-            - Distancia camino minimo: 19942.22<br>
-          Top 7
-          Top 6<br>
-          - Codigo: PBO<br>
-          - Nombre: Paraburdoo Airport<br>
-          - Ciudad: Paraburdoo<br>
-          - Pais: Australia<br>
-          - Latitud: -23.17110062<br>
-          - Longitud: 117.7450027<br>
-          - Distancia camino minimo: 19942.22<br>
-        Top 7
-        Top 6<br>
-        - Codigo: PBO<br>
-        - Nombre: Paraburdoo Airport<br>
-        - Ciudad: Paraburdoo<br>
-        - Pais: Australia<br>
-        - Latitud: -23.17110062<br>
-        - Longitud: 117.7450027<br>
-        - Distancia camino minimo: 19942.22<br>
-      Top 7
-      Top 6<br>
-      - Codigo: PBO<br>
-      - Nombre: Paraburdoo Airport<br>
-      - Ciudad: Paraburdoo<br>
-      - Pais: Australia<br>
-      - Latitud: -23.17110062<br>
-      - Longitud: 117.7450027<br>
-      - Distancia camino minimo: 19942.22<br>
-    Top 7
-    Top 6<br>
-    - Codigo: PBO<br>
-    - Nombre: Paraburdoo Airport<br>
-    - Ciudad: Paraburdoo<br>
-    - Pais: Australia<br>
-    - Latitud: -23.17110062<br>
-    - Longitud: 117.7450027<br>
-    - Distancia camino minimo: 19942.22<br>
-  Top 7
+            <div class="cammin10" style="background-color: rgb(85, 188, 225);">
+                <h3>These are the top 10 longest paths from the first vertex:</h3>
+                <div class="archivo10"id="top10">
+                    
                 </div>
 
             </div>
         </div>
-        <div class="rightelement" style="background-color: rgb(0, 255, 213);">
-            <img src='https://via.placeholder.com/800x400'> </img>
+        <div class="rightelement" style="background-color: rgb(187, 255, 0);">
+            <iframe class="mapa" src="./mapa.html" title="description"></iframe>
+            <!-- <img class="mapa" src='https://via.placeholder.com/800x400'> </img> -->
         </div>
         
     </div>
@@ -183,6 +174,55 @@ body {
 
 
 <!-- <iframe src="./mapa.html" title="description" style="height:1000px;width: 1000px;"></iframe> -->
+
+<script>
+// Función para cargar el contenido del archivo de texto en el contenedor HTML
+function cargarContenido() {
+    // Ruta del archivo de texto
+    var archivo1 = './caminomin.txt';
+    var archivo2 = './top10.txt';
+
+    // Petición para cargar el archivo de texto
+    var xhr1 = new XMLHttpRequest();
+    xhr1.onreadystatechange = function() {
+        if (xhr1.readyState === XMLHttpRequest.DONE) {
+            if (xhr1.status === 200) {
+                // Si la petición es exitosa, colocar el contenido en el contenedor HTML
+                document.getElementById('textoContainer').innerHTML = xhr1.responseText;
+            } else {
+                document.getElementById('textoContainer').innerHTML = 'Error al cargar el archivo.';
+            }
+        }
+    };
+    xhr1.open('GET', archivo1, true);
+    xhr1.send();
+
+    var xhr2 = new XMLHttpRequest();
+    xhr2.onreadystatechange = function() {
+        if (xhr2.readyState === XMLHttpRequest.DONE) {
+            if (xhr2.status === 200) {
+                // Si la petición es exitosa, dividir el contenido por saltos de línea y mostrar cada línea en el contenedor HTML
+                var contenido = xhr2.responseText;
+                var lineas = contenido.split('\n');
+                var contenidoFormateado = '';
+                for (var i = 0; i < lineas.length; i++) {
+                    contenidoFormateado += lineas[i] + '<br>';
+                }
+                document.getElementById('top10').innerHTML = contenidoFormateado;
+            } else {
+                document.getElementById('top10').innerHTML = 'Error al cargar el archivo.';
+            }
+        }
+    };
+    xhr2.open('GET', archivo2, true);
+    xhr2.send();
+}
+
+// Llamar a la función cuando se cargue la página
+window.onload = cargarContenido;
+</script>
+
+
 
 
 </body>
