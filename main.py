@@ -182,7 +182,7 @@ def get_nodes_from_flights(df):
     return nodes
 
 def graph_nodes(search, df, draw_lines):
-    mapbox_access_token = 'pk.eyJ1Ijoic2ViYXN0aWFubWFsZG9uYWRvMTk0NSIsImEiOiJjbGluYnRobHkwbDQyM2xwOGc4aGN5ZnpvIn0.Jal1X7da0VhVK8gkKrWBng'
+    mapbox_access_token = 'insert your mapbox token here'
 
     flights = search_nodes(search, df)
     nodes = get_nodes_from_flights(flights)
