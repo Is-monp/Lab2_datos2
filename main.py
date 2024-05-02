@@ -213,8 +213,6 @@ def graph_nodes(search, df, draw_lines):
             'style': "outdoors", 'zoom': 0.7},
         showlegend=False)
 
-    fig.show(renderer="browser")
-
 def main():
     filename = "flights.csv"
     df = read_flight_data(filename)
@@ -259,7 +257,7 @@ def main():
     src_distances_df.reset_index(inplace=True, drop=True)
     with open("top10.txt", "w") as archivo:
         for i in range(len(src_distances_df)):
-            archivo.write(f"Top {(i + 1)}\n")
+            archivo.write(f"Number # {(i + 1)}\n")
             archivo.write(f"  - Codigo: {src_distances_df.at[i, 'Airport Code']}\n")
             archivo.write(f"  - Nombre: {src_distances_df.at[i, 'Airport Name']}\n")
             archivo.write(f"  - Ciudad: {src_distances_df.at[i, 'Airport City']}\n")
